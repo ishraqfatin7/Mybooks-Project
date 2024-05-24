@@ -28,7 +28,10 @@ client.connect(err => {
     app.get('/books',(req,res)=>{
         booksCollection.find().toArray((err,items) => {
            console.log('from database ',items)
+           //dont send the objectid to the client only send the other data
+           
            res.send(items)
+
         })
       })
     
